@@ -1,38 +1,124 @@
-.App {
-  text-align: center;
+:root {
+  --basic-black: #000000;
+  --light-yellow: #f4e041;
+  --light-blue: #00bdd3;
+  --background-color: #f8f8f8;
+  --basic-white: #ffffff;
+  --checkbox-default: #d0cfcf;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.AppNavigation {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  justify-content: space-around;
+  padding: 15px;
 }
 
-.App-link {
-  color: #61dafb;
+.Button {
+  background-color: var(--light-yellow);
+  padding: 5px 30px;
+  border-radius: 25px;
+  font-size: 16px;
+  border: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ImageContainer {
+  background-image: url("./img/image\ 1.png");
+  color: var(--basic-white);
+}
+
+.LogoName {
+  text-transform: uppercase;
+}
+
+.MainPageHeader {
+  font-size: 40px;
+  text-align: center;
+  margin: 0;
+}
+
+.MainPageParagraph {
+  text-align: center;
+  font-size: 16px;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.ContainerButton {
+  margin: 0 auto;
+  display: block;
+}
+
+.GroupList {
+  padding: 0;
+  list-style: none;
+}
+
+/* Modal */
+
+.UserContacts {
+  padding: 15px;
+  border: 1px solid #d0cfcf;
+  border-radius: 4px;
+  background-color: var(--background-color);
+}
+
+.GroupList li:nth-child(-n + 2) {
+  margin-bottom: 50px;
+}
+
+.PhonePattern {
+  font-size: 12px;
+  padding-left: 10px;
+}
+
+.Checkbox {
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+.CustomCheckBox + label {
+  position: relative;
+  display: block;
+  cursor: pointer;
+  user-select: none;
+  padding-left: 35px;
+}
+
+.VisuallyHidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.CustomCheckBox + label::before {
+  top: 50%;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: "";
+  position: absolute;
+  background-position: 0 0;
+  background-image: url("./img/checkbox-disabled.png");
+  background-repeat: no-repeat;
+  transform: translateY(-50%);
+}
+
+.CustomCheckBox:checked + label::before {
+  top: 50%;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  content: "";
+  position: absolute;
+  background-position: 0 0;
+  background-image: url("./img/checkbox.png");
+  background-repeat: no-repeat;
+  transform: translateY(-50%);
 }
