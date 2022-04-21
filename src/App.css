@@ -5,42 +5,153 @@
   --background-color: #f8f8f8;
   --basic-white: #ffffff;
   --checkbox-default: #d0cfcf;
+  --background-color-button: #b4b4b4;
+  --button-hover: #ffe302;
+}
+
+.Container {
+  max-width: 768px;
+  width: 100%;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .AppNavigation {
   display: flex;
-  justify-content: space-around;
-  padding: 15px;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.LogoDescriptionContainer {
+  display: flex;
+  align-items: center;
+}
+
+.NavigationButtonContainer {
+  display: flex;
+  margin-right: -10px;
+}
+
+.AppHeader {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.LogoContainer {
+  background-image: url("./img/Logo.svg");
+}
+
+.MainContainer {
+  background-color: var(--background-color);
 }
 
 .Button {
   background-color: var(--light-yellow);
-  padding: 5px 30px;
+  padding: 5px 22px;
   border-radius: 25px;
-  font-size: 16px;
   border: none;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
 }
 
-.ImageContainer {
-  background-image: url("./img/image\ 1.png");
+.NavButton {
+  margin-right: 10px;
+}
+
+.Button:hover {
+  background-color: var(--button-hover);
+}
+
+.Hero {
+  background-image: url("./img/hero-bg-mobile.jpg");
   color: var(--basic-white);
+  margin-bottom: 140px;
+  background-size: cover;
+  padding-top: 32px;
+  padding-bottom: 32px;
+  min-height: 500px;
+}
+
+@media (min-width: 768px) {
+  .LoginForm {
+    width: 380px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .Hero .ImageContainer {
+    max-width: 412px;
+  }
+  .Hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-image: url("./img/hero-bg-tablet.jpg");
+  }
+}
+@media (min-width: 1024px) {
+  .Hero {
+    min-height: 650px;
+    background-image: url("./img/hero-bg-laptop.jpg");
+  }
+}
+
+@media (min-width: 1202px) {
+  .Hero {
+    background-image: url("./img/hero-bg-desktop.jpg");
+  }
 }
 
 .LogoName {
   text-transform: uppercase;
 }
 
+/* User Styles */
+
+.UserInfo {
+  background-color: var(--basic-white);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.UserName {
+  margin: 0;
+  padding-top: 20px;
+}
+
+.UserData {
+  text-align: center;
+  padding-top: 20px;
+  margin: 0;
+  padding-bottom: 20px;
+}
+
 .MainPageHeader {
   font-size: 40px;
   text-align: center;
+  font-weight: 400;
   margin: 0;
+  margin-bottom: 20px;
+  line-height: 40px;
+}
+
+.TaskHeader {
+  margin-bottom: 50px;
 }
 
 .MainPageParagraph {
+  z-index: 1;
   text-align: center;
   font-size: 16px;
   margin-top: 0;
-  margin-bottom: 0;
+  margin-bottom: 35px;
 }
 
 .ContainerButton {
@@ -51,15 +162,40 @@
 .GroupList {
   padding: 0;
   list-style: none;
+  margin-bottom: 45px;
+}
+
+.LoadButton {
+  padding: 15px;
+  border-radius: 4px 0px 0px 4px;
+  border: 1px solid rgba(0, 0, 0, 0.87);
+}
+
+.SignUpButton {
+  background-color: var(--background-color-button);
+  color: var(--basic-white);
+  font-size: 16px;
+}
+
+.SearchInput {
+  padding: 15px;
+  border: 1px solid #d0cfcf;
+  border-radius: 4px;
+  margin-bottom: 50px;
 }
 
 /* Modal */
+
+.RequestHeader {
+  margin-bottom: 50px;
+}
 
 .UserContacts {
   padding: 15px;
   border: 1px solid #d0cfcf;
   border-radius: 4px;
   background-color: var(--background-color);
+  width: 100%;
 }
 
 .GroupList li:nth-child(-n + 2) {
@@ -111,14 +247,5 @@
 }
 
 .CustomCheckBox:checked + label::before {
-  top: 50%;
-  left: 0;
-  width: 20px;
-  height: 20px;
-  content: "";
-  position: absolute;
-  background-position: 0 0;
   background-image: url("./img/checkbox.png");
-  background-repeat: no-repeat;
-  transform: translateY(-50%);
 }
